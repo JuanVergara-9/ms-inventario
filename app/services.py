@@ -25,6 +25,7 @@ def actualizar_stock(producto_id, cantidad):
             return nuevo_stock
     except Exception as e:
         db.session.rollback()
+        print(f"Error al actualizar stock: {e}")
         raise e
 
 def obtener_stock(producto_id):
